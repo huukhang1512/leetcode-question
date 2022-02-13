@@ -14,12 +14,12 @@
  * }
  */
 class Solution {
-    //bfs
     public int maxDepth(TreeNode root) {
         if(root == null){
             return 0;
         }
-        int depth = 0;
+        // bfs
+        /* int depth = 0;
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
         while(!queue.isEmpty()){
@@ -36,6 +36,9 @@ class Solution {
             }
           
         }
-        return depth;
+        return depth; */
+        
+        //dfs
+        return Math.max((maxDepth(root.left) + 1), (maxDepth(root.right) + 1));
     }
 }
