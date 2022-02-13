@@ -18,27 +18,29 @@ class Solution {
         if(root == null){
             return 0;
         }
-        // bfs
-        /* int depth = 0;
+        //BFS
+        
+        int depth = 0;
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
         while(!queue.isEmpty()){
             depth++;
             int queueSize = queue.size();
-            for(int i = 0 ; i< queueSize;i++){
-                TreeNode temp = queue.poll(); 
+            for(int i = 0; i < queueSize; i++){
+                TreeNode temp = queue.poll();
                 if(temp.left != null){
                     queue.add(temp.left);
                 }
+                
                 if(temp.right != null){
-                    queue.add(temp.right);  
+                    queue.add(temp.right);
                 }
             }
-          
         }
-        return depth; */
+        return depth;
+       
         
-        //dfs
-        return Math.max((maxDepth(root.left) + 1), (maxDepth(root.right) + 1));
+        // DFS
+        // return Math.max((maxDepth(root.left) + 1),(maxDepth(root.right) + 1));
     }
 }
