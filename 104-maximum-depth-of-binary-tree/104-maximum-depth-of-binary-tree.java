@@ -19,7 +19,7 @@ class Solution {
             return 0;
         }
         //BFS
-        
+        /*
         int depth = 0;
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
@@ -38,9 +38,9 @@ class Solution {
             }
         }
         return depth;
-       
+        */
         
         // DFS
-        // return Math.max((maxDepth(root.left) + 1),(maxDepth(root.right) + 1));
+        return Math.max((maxDepth(root.left) + 1),(maxDepth(root.right) + 1));
     }
 }
