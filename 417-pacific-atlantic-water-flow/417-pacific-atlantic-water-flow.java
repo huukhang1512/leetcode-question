@@ -35,7 +35,11 @@ class Solution {
         
     }
     public void dfs(int[][] matrix, int i, int j, int curHeight, boolean[][] ocean){
-        if(i < 0 || j < 0 || i >= matrix.length || j >= matrix[0].length || curHeight > matrix[i][j] || ocean[i][j]){
+        if  (i < 0 || j < 0 || i >= matrix.length || j >= matrix[0].length || 
+            curHeight > matrix[i][j] || ocean[i][j] 
+            // this is the main logic, indicate that it can flow to the neighbour cells
+            )
+        {
             return;
         }
         ocean[i][j] = true;
