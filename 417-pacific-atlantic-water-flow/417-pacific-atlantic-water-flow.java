@@ -34,8 +34,8 @@ class Solution {
         return result;
         
     }
-    public void dfs(int[][] matrix, int i, int j, int preHeight, boolean[][] ocean){
-        if(i < 0 || j < 0 || i >= matrix.length || j >= matrix[0].length || preHeight > matrix[i][j] || ocean[i][j]){
+    public void dfs(int[][] matrix, int i, int j, int curHeight, boolean[][] ocean){
+        if(i < 0 || j < 0 || i >= matrix.length || j >= matrix[0].length || curHeight > matrix[i][j] || ocean[i][j]){
             return;
         }
         ocean[i][j] = true;
