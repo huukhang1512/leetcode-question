@@ -10,20 +10,20 @@
  */
 class Solution {
     public ListNode deleteMiddle(ListNode head) {
+        if(head == null || head.next == null){
+            return null;
+        }
         int count = 0;
         ListNode itr = head;
         while(itr != null){
             count++;
             itr = itr.next;
         }
-        if(count == 1){
-            return null;
-        }
         itr = head;
         int mid = (int) Math.floor(count/2);
         
-        
-        while(mid >= 2){
+        // think of this like: 
+        while(mid > 1 ){
             itr = itr.next;
             mid--;
         }
