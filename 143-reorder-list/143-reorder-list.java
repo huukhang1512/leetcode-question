@@ -12,7 +12,7 @@ class Solution {
     public void reorderList(ListNode head) {
         ListNode iter = head;
         ArrayList<ListNode> arr = new ArrayList<>();
-        
+        // put everything into an array for easy access to the index and the linkedlist size
         while(iter != null){
             arr.add(iter);
             iter = iter.next;
@@ -22,6 +22,7 @@ class Solution {
         int end = arr.size() - 1;
         
         for(int i = 0 ; i < arr.size(); i++, head = head.next){
+            // re order the array in alternating way
             if(i % 2 == 0){
                 head.next = arr.get(start);
                 start++;
