@@ -1,19 +1,22 @@
 class Solution {
     public boolean canFinish(int numCourses, int[][] prerequisites) {
-        int[][] matrix = new int[numCourses][numCourses]; // i -> j
+        boolean[][] matrix = new boolean[numCourses][numCourses]; // i -> j
         int[] indegree = new int[numCourses];
 
+        HashMap<Integer,Integer> map = new HashMap<Integer, Integer>();
+        
+        
         // topological sorting, kahn algo
         for (int i=0; i<prerequisites.length; i++) {
             int subject = prerequisites[i][0];
             int pre = prerequisites[i][1];
             
-            if (matrix[pre][subject] == 0){
+            if (!matrix[pre][subject]){
                 indegree[subject]++; 
             }
-            matrix[pre][subject] = 1;
+            matrix[pre][subject] = true;
         }
-
+        
         int count = 0;
         Queue<Integer> queue = new LinkedList();
         for (int i=0; i<indegree.length; i++) {
@@ -23,7 +26,7 @@ class Solution {
             int course = queue.poll();
             count++;
             for (int i=0; i<numCourses; i++) {
-                if (matrix[course][i] != 0) {
+                if (matrix[course][i]) {
                     indegree[i]--;
                     if (indegree[i] == 0){
                         queue.add(i);
