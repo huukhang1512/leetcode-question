@@ -26,7 +26,7 @@ class Solution {
             int course = queue.poll();
             count++;
             for (int i=0; i<numCourses; i++) {
-                if (matrix[course][i]) {
+                if (matrix[course][i]) { // check if there are any other subject that need course as req
                     indegree[i]--;
                     if (indegree[i] == 0){
                         queue.add(i);
