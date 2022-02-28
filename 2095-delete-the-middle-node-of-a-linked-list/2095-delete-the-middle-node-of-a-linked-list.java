@@ -22,8 +22,7 @@ class Solution {
         itr = head;
         int mid = (int) Math.floor(count/2);
         
-        // think of this like: 
-        while(mid > 1 ){
+        while(mid > 1){
             itr = itr.next;
             mid--;
         }
