@@ -23,9 +23,10 @@ class Solution {
         if(cur == null){
             return 0;
         }
-        int left = Math.max(helper(cur.left),0);
-        int right = Math.max(helper(cur.right),0);
-        max = Math.max(max, cur.val + left + right);
-        return cur.val + Math.max(left,right);
+        // recursively through left and right
+        int left = Math.max(helper(cur.left),0); // get the maximum path of the left sub tree
+        int right = Math.max(helper(cur.right),0); // get the maximum path of the right sub tree
+        max = Math.max(max, cur.val + left + right); // result
+        return cur.val + Math.max(left,right); // maximum you could get without split
     }
 }
