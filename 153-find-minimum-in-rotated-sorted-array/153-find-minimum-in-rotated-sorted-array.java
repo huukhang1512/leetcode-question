@@ -17,10 +17,7 @@ class Solution {
         
         */
         
-        if(nums[0] < nums[nums.length -1]){
-            return nums[0];
-        }
-        if(nums.length == 1){
+        if(nums[0] <= nums[nums.length -1]){
             return nums[0];
         }
                 
