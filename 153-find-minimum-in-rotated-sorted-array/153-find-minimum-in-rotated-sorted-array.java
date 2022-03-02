@@ -31,14 +31,14 @@ class Solution {
             
             if(nums[mid] > nums[mid + 1]){
                 return nums[mid+1];
-            }
-            if (nums[mid - 1] > nums[mid]){
+            } else if (nums[mid - 1] > nums[mid]){
                 return nums[mid];
             }
-            
+            // if the mid element is more than the first element, it means that the smaller side is on the right
             if(nums[mid] > nums[0]){
                 left = mid + 1;
             } else {
+            // else, the smaller side is on the left
                 right = mid - 1;
             }
         }
