@@ -36,10 +36,10 @@ class Solution {
             }
             // if the mid element is more than the first element, it means that the smaller side is on the right
             if(nums[mid] > nums[0]){
-                left = mid + 1;
+                left = mid;
             } else {
             // else, the smaller side is on the left
-                right = mid - 1;
+                right = mid;
             }
         }
         return -1;
