@@ -1,5 +1,14 @@
 class Solution {
     public int maxProduct(int[] nums) {
+        /* what I know:
+        if the array was all positive number -> the maxmum subarr will be the whole array itself
+        
+        if the array has negative value:
+            - number of negative value is even -> positive product value
+            - number of negative value is odd -> negative product value
+            
+        */
+        
         int res = nums[0];
         int min = nums[0];
         int max = nums[0];
