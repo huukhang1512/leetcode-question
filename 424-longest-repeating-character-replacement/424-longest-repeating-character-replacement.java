@@ -5,8 +5,9 @@ class Solution {
         HashMap<Character,Integer> map = new HashMap<>();
         for(int i = 0; i < s.length();i++){
             map.put(s.charAt(i), map.getOrDefault(s.charAt(i),0) + 1);
+            // update the hashMap frequency
             if((i-j+1) - getMaxFreq(map) > k){
-                map.put(s.charAt(j), map.get(s.charAt(j))- 1); // decrease the freq in the map
+                map.put(s.charAt(j), map.get(s.charAt(j))- 1);
                 j++;
             }
             result = Math.max(result,i-j+1);
