@@ -3,8 +3,11 @@ class Solution {
         HashMap<String, List<String>> map = new HashMap();
         for(String str : strs){
             char[] charArr = str.toCharArray();
-            Arrays.sort(charArr);
-            String sortedS = String.valueOf(charArr);
+            char[] charMap = new char[26];
+            for(char c : charArr){
+                charMap[c-'a']++;
+            }
+            String sortedS = String.valueOf(charMap);
             if(map.containsKey(sortedS)){
                 map.get(sortedS).add(str);
             } else {
