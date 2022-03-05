@@ -12,6 +12,7 @@ class Solution {
             
             // Math.min(curNum, curMax * curNum, curMin * curNum)
             min = Math.min(nums[i], Math.min(tempMax*nums[i], min * nums[i]));   
+            
             res = Math.max(res,max);
         }
         return res;
