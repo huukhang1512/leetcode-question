@@ -4,7 +4,7 @@ class Solution {
         while(b !=0 ) {
             c = a&b;
             a = a ^ b;
-            b = (c)<<1;
+            b = c<<1;
         }
       return a;
     }
