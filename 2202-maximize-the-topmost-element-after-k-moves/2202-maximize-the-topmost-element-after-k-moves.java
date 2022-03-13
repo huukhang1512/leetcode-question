@@ -5,7 +5,7 @@ class Solution {
         }
         
         
-        int toLook = k <= nums.length ? k - 1 : nums.length;
+        int toLook = Math.min(k-1, nums.length);
         int maxSoFar = -1;
         for(int i = 0; i < toLook; i++) {
             maxSoFar = Math.max(nums[i], maxSoFar);
