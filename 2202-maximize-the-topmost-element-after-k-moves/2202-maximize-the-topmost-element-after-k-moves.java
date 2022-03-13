@@ -1,6 +1,6 @@
 class Solution {
     public int maximumTop(int[] nums, int k) {
-        if(nums.length == 1 && k % 2 == 1) {
+        if(nums.length == 1 && k % 2 != 0) {
             return -1;
         }
         
