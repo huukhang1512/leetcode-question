@@ -22,7 +22,7 @@ class Solution {
         int[] res = new int[numCourses];
         int index = 0;
         while(!inDegree.isEmpty()){
-            boolean isCyclic = false;
+            boolean isCyclic = true;
             for(int course: inDegree.keySet()){
                 if(inDegree.get(course) == 0){ // no prerequisite, or 0 indegrees
                     res[index++] = course;
@@ -31,11 +31,11 @@ class Solution {
                     for(int child : children)
                         inDegree.put(child, inDegree.get(child) - 1);
                     inDegree.remove(course);
-                    isCyclic = true;
+                    isCyclic = false;
                     break; 
                 }
             }
-            if (!isCyclic)
+            if (isCyclic)
                 return new int[0]; // empty array
         }
         return res;
