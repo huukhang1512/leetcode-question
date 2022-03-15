@@ -10,12 +10,12 @@ class Solution {
         boolean[][] atlantic = new boolean[n][m];
         boolean[][] pacific = new boolean[n][m];
         
-        for(int i = 0; i < n;i++){
+        for(int i = 0; i < n; i++){
             dfs(heights, i, 0, heights[i][0], pacific);  // left
             dfs(heights, i, m-1, heights[i][m-1], atlantic); // right
         }
         
-        for(int i = 0; i < m;i++){
+        for(int i = 0; i < m; i++){
             dfs(heights, 0, i, heights[0][i], pacific); // top
             dfs(heights, n-1, i, heights[n-1][i], atlantic); //down
         }
