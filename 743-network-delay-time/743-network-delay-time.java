@@ -14,7 +14,7 @@ class Solution {
         
         heap.add(new int[]{0, k});
         
-        boolean[] visited = new boolean[n+1];
+        HashSet<Integer> visited = new HashSet<>();
         int res = 0;
         
         while(!heap.isEmpty()){
@@ -22,17 +22,16 @@ class Solution {
             int curNode = cur[1];
             int curTime = cur[0];
             
-            if(visited[curNode]) continue;
+            if(visited.contains(curNode)) continue;
             
-            visited[curNode] = true;
+            visited.add(curNode);
             res = Math.max(res,curTime);
-            n--;
             if(edges.containsKey(curNode)){
                 for(int next : edges.get(curNode).keySet()){
                     heap.add(new int[]{curTime + edges.get(curNode).get(next), next});
                 }
             }
         }
-        return n == 0 ? res : -1;
+        return visited.size() == n ? res : -1;
     }
 }
