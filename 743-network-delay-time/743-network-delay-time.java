@@ -25,7 +25,7 @@ class Solution {
             if(visited[curNode]) continue;
             
             visited[curNode] = true;
-            res = curTime;
+            res = Math.max(res,curTime);
             n--;
             if(edges.containsKey(curNode)){
                 for(int next : edges.get(curNode).keySet()){
