@@ -34,14 +34,14 @@ class LRUCache {
     }
     
     public int get(int key) {
+        int result = -1;
         if(cache.containsKey(key)){
             Node node = cache.get(key);
+            result = node.val;
             deleteNode(node); // remove the item from the doubly linked list and then add it to the front
             addNode(node);
-            return cache.get(key).val;
-        } else {
-            return -1;
         }
+        return result;
     }
     
     public void put(int key, int value) {
