@@ -27,6 +27,9 @@ class Solution {
             visited[curNode] = true;
             res = Math.max(res, curTime);
             n--;
+            if(n == 0){
+                return res;
+            }
             if(edges.containsKey(curNode)){
                 for(int next : edges.get(curNode).keySet()){
                     heap.add(new int[]{curTime + edges.get(curNode).get(next), next});
