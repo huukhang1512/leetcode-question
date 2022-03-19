@@ -4,6 +4,10 @@ class LRUCache {
         Node next;
         int key;
         int val;
+        public Node(int key, int val){
+            this.key = key;
+            this.val = val;
+        }
     }
     
     public void deleteNode(Node node) {
@@ -23,8 +27,8 @@ class LRUCache {
     Map<Integer, Node> cache;
     int maxCap;
     // keep in mind that these are dummy nodes!
-    Node head = new Node();
-    Node tail = new Node();
+    Node head = new Node(0, 0);
+    Node tail = new Node(0, 0);
     
     public LRUCache(int capacity) {
         cache = new HashMap<>();
@@ -55,10 +59,7 @@ class LRUCache {
                 cache.remove(tail.prev.key);
                 deleteNode(tail.prev);
             } 
-            Node newNode = new Node();
-            newNode.key = key;
-            newNode.val = value;
-
+            Node newNode = new Node(key,value);
             cache.put(key, newNode);
             addNode(newNode);
         }
