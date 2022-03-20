@@ -5,7 +5,7 @@ class Solution {
         int count = 0;
         int res = Integer.MIN_VALUE;
         while(end < nums.length){
-            if(nums[end] == 0){
+            if(nums[end] == 0){ // count the num of 0 that you need to
                 count++;
             }
             while(count > k && start < nums.length){
