@@ -6,7 +6,7 @@ class Solution {
         int end = 0;
         while(end < nums.length){
             curSum += nums[end];
-            while(curSum >= target){
+            while(start <= end && curSum >= target){
                 curSum -= nums[start];
                 res = Math.min(res, end - start + 1);
                 start++;
