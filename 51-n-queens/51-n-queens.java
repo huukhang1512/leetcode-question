@@ -1,4 +1,5 @@
 class Solution {
+    int called = 0;
     private Set<Integer>colSet = new HashSet<>();
     private Set<Integer>digSet = new HashSet<>(); // diagonal
     private Set<Integer>antiDigSet = new HashSet<>(); // anti diagonal
@@ -11,6 +12,8 @@ class Solution {
     }
     
     public void dfs(List<List<String>> res, List<String> current, int row, int n){
+        System.out.println(called);
+        called++;
         if(row == n){
             res.add(new ArrayList<String>(current));
             return;
