@@ -18,29 +18,6 @@ class Solution {
         if(root == null){
             return 0;
         }
-        //BFS
-        /*
-        int depth = 0;
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.add(root);
-        while(!queue.isEmpty()){
-            depth++;
-            int queueSize = queue.size();
-            for(int i = 0; i < queueSize; i++){
-                TreeNode temp = queue.poll();
-                if(temp.left != null){
-                    queue.add(temp.left);
-                }
-                
-                if(temp.right != null){
-                    queue.add(temp.right);
-                }
-            }
-        }
-        return depth;
-        */
-        
-        // DFS
-        return Math.max((maxDepth(root.left) + 1),(maxDepth(root.right) + 1));
+        return Math.max(maxDepth(root.right) + 1, maxDepth(root.left) + 1);
     }
 }
