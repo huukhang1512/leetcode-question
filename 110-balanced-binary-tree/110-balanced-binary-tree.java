@@ -29,6 +29,6 @@ class Solution {
         if(root == null){
             return 0;
         }
-        return Math.max(1 + dfs(root.right), 1 + dfs(root.left));
+        return Math.max(dfs(root.right), dfs(root.left)) + 1;
     }
 }
