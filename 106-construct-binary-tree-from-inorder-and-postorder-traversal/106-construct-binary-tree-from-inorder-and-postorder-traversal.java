@@ -24,8 +24,7 @@ class Solution {
         postIndex = postorder.length - 1;
         return helper(0, postorder.length - 1,postorder);
     }
-    // pre == preOrder
-    // in == inOrder
+
     public TreeNode helper(int left,int right,int[] post){
         if(postIndex < 0 || left > right){
             return null;
