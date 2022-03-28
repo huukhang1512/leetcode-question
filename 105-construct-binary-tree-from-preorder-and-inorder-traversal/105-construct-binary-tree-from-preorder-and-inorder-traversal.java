@@ -23,15 +23,15 @@ class Solution {
         if(preStart > pre.length -1 || inStart > inEnd){
             return null;
         }
-        TreeNode root = new TreeNode(pre[preStart]);
-        int inIndex = inStart;
+        TreeNode root = new TreeNode(pre[preStart]); // e.g 3
+        int inIndex = inStart; // get the index of the root in the inorder arr
         for(int i = inStart; i <= inEnd; i++){
             if(in[i] == root.val){
                 inIndex = i;
             }
         }
-        root.left = helper(preStart+1,inStart,inIndex - 1,pre,in);
-        root.right = helper(preStart + inIndex - inStart + 1,inIndex+1,inEnd,pre,in);
+        root.left = helper(preStart + 1, inStart, inIndex - 1, pre, in);
+        root.right = helper(preStart + inIndex - inStart + 1, inIndex + 1, inEnd, pre, in);
         return root;
     }
 }
