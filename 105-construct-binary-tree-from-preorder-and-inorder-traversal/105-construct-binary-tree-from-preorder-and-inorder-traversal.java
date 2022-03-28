@@ -25,14 +25,25 @@ class Solution {
     // pre == preOrder
     // in == inOrder
     public TreeNode helper(int preStart, int left,int right,int[] pre){
-        if(preStart > pre.length -1 || left > right){
+        if(left > right){
             return null;
         }
-        TreeNode root = new TreeNode(pre[preStart]); // e.g 3
+        TreeNode root = new TreeNode(pre[preStart]);
         int inIndex = inOrderMap.get(root.val); // get the index of the root in the inorder arr
         
-        root.left = helper(preStart + 1, left, inIndex - 1, pre);
-        root.right = helper(preStart + inIndex - left + 1, inIndex + 1, right, pre);
+        /* 
+        preOrder = root left right 
+            -> left sub arr = root + 1
+            -> right sub arr = root + 
+
+        inOrder = left root right 
+            -> left sub arr = root - 1
+            -> right sub arr = root + 
+        */
+        
+        
+        root.left = helper(preStart + 1, left, inIndex - 1, pre); 
+        root.right = helper(preStart + inIndex - left + 1, inIndex + 1, right, pre); // 
         
         return root;
     }
