@@ -20,15 +20,17 @@ class Solution {
         for(int i = 0; i < inorder.length; i++){
             inOrderMap.put(inorder[i], i);
         }
-        return helper(0,0,inorder.length - 1,preorder);
+        return helper(0,inorder.length - 1,preorder);
     }
     // pre == preOrder
     // in == inOrder
-    public TreeNode helper(int preStart, int left,int right,int[] pre){
+    int preIndex = 0;
+    public TreeNode helper(int left,int right,int[] pre){
         if(left > right){
             return null;
         }
-        TreeNode root = new TreeNode(pre[preStart]);
+        TreeNode root = new TreeNode(pre[preIndex]);
+        preIndex++;
         int inIndex = inOrderMap.get(root.val); // get the index of the root in the inorder arr
         
         /* 
@@ -42,8 +44,8 @@ class Solution {
         */
         
         
-        root.left = helper(preStart + 1, left, inIndex - 1, pre); 
-        root.right = helper(preStart + inIndex - left + 1, inIndex + 1, right, pre); // 
+        root.left = helper(left, inIndex - 1, pre); 
+        root.right = helper(inIndex + 1, right, pre); // 
         
         return root;
     }
