@@ -32,18 +32,6 @@ class Solution {
         TreeNode root = new TreeNode(post[postIndex]);
         postIndex--;
         int inIndex = inOrderMap.get(root.val); 
-        // get the index of the root in the inorder arr
-        
-        /* 
-        postOrder = left right root 
-            -> left sub arr = right - 1
-            -> right sub arr = root - 1 
-
-        inOrder = left root right 
-            -> left sub arr = root - 1
-            -> right sub arr = root + 1
-        */
-        
         
         root.right = helper(inIndex + 1, right , post); 
         root.left = helper(left, inIndex - 1, post); 
