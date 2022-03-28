@@ -1,5 +1,4 @@
 class Solution {
-    int called = 0;
     private Set<Integer>colSet = new HashSet<>();
     private Set<Integer>digSet = new HashSet<>(); // diagonal
     private Set<Integer>antiDigSet = new HashSet<>(); // anti diagonal
@@ -12,14 +11,14 @@ class Solution {
     }
     
     public void dfs(List<List<String>> res, List<String> current, int row, int n){
-        System.out.println(called);
-        called++;
         if(row == n){
             res.add(new ArrayList<String>(current));
             return;
         }
         for(int i = 0; i < n; i++){
-            if(colSet.contains(i) || digSet.contains(row+i) || antiDigSet.contains(row-i)) continue;
+            if(colSet.contains(i) || digSet.contains(row+i) || antiDigSet.contains(row-i)){
+                continue;
+            }
             char[] charArr = new char[n];
             Arrays.fill(charArr, '.');
             charArr[i] = 'Q'; // placing a queen at this position
