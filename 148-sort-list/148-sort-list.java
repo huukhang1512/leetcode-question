@@ -14,18 +14,17 @@ class Solution {
         // sort that list
         // create a new treeNode
         
-        ArrayList<Integer> list = new ArrayList<>();
+        PriorityQueue<Integer> heap = new PriorityQueue<>();
         ListNode itr = head;
         while(itr != null){
-            list.add(itr.val);
+            heap.offer(itr.val);
             itr = itr.next;
         }
         
-        Collections.sort(list);
         ListNode res = new ListNode();
         ListNode clone = res;
-        for(int i = 0; i < list.size(); i++){
-            clone.next = new ListNode(list.get(i));
+        while(!heap.isEmpty()){
+            clone.next = new ListNode(heap.poll());
             clone = clone.next;
         }
         return res.next;
