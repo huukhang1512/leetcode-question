@@ -11,7 +11,6 @@
 class Solution {
     public ListNode sortList(ListNode head) {
         // O(N) put everything into a heap
-        // sort that list
         // create a new treeNode
         
         PriorityQueue<Integer> heap = new PriorityQueue<>();
