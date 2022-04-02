@@ -5,12 +5,8 @@
 var validPalindrome = function(s) {
     let start = 0;
     let end = s.length -1;
-    let count = 0;
     while(start < end){
-        if(count > 1){
-            return false;
-        }
-        if(s[start] !== s[end] && count <= 1){
+        if(s[start] !== s[end]){
             return deleteOneChar(start, end-1, s) || deleteOneChar(start + 1, end, s);
             
         }
