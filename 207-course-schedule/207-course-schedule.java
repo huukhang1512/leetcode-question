@@ -55,9 +55,9 @@ class Solution {
             int subject = prerequisites[i][0];
             int pre = prerequisites[i][1];
             
-            if (!matrix[pre][subject]){
+            // if (!matrix[pre][subject]){
                 indegree[subject]++; 
-            }
+            // }
             matrix[pre][subject] = true;
         }
         
