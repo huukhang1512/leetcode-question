@@ -28,12 +28,12 @@ class Solution {
         while(!queue.isEmpty()){
             int subject = queue.poll();
             res[index++] = subject;
-            for(int i = 0; i < numCourses; i++){
-                if(adjList.containsKey(subject) && adjList.get(subject).contains(i)){
-                    inDegree[i]--;
-                    if(inDegree[i] == 0){
-                        queue.add(i);
-                    }
+            if(adjList.containsKey(subject)){
+                for(int course : adjList.get(subject)){
+                    inDegree[course]--;
+                    if(inDegree[course] == 0){
+                        queue.add(course);
+                    }       
                 }
             }
         }
