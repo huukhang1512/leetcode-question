@@ -15,12 +15,11 @@ class Solution {
         }
 
         if(s.charAt(i) == s.charAt(j)){
-            System.out.println(s.charAt(i));
             memo[i][j] += 2 + dfs(s,i + 1, j - 1,memo) ;// move anti-diagonaly
         } else {
             memo[i][j] = Math.max(
-                dfs(s,i,j-1,memo),
-                dfs(s,i+1,j,memo)
+                dfs(s,i,j-1,memo), // move to the left
+                dfs(s,i+1,j,memo) // move the bottom
             );
         }
         return memo[i][j];
