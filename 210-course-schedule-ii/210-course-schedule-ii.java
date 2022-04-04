@@ -20,6 +20,7 @@ class Solution {
         
         LinkedList<Integer> queue = new LinkedList<>();
         for(int i = 0; i < inDegree.length; i++){
+            System.out.println(inDegree[i]);
             if(inDegree[i] == 0){
                 queue.add(i);
             }
