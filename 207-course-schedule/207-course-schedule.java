@@ -45,10 +45,7 @@ class Solution {
 class Solution {
     public boolean canFinish(int numCourses, int[][] prerequisites) {
         boolean[][] matrix = new boolean[numCourses][numCourses]; // i -> j
-        int[] indegree = new int[numCourses];
-
-        HashMap<Integer,Integer> map = new HashMap<Integer, Integer>();
-        
+        int[] indegree = new int[numCourses];        
         
         // topological sorting, kahn algo
         for (int i=0; i<prerequisites.length; i++) {
