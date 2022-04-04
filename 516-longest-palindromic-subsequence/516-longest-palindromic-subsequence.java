@@ -10,9 +10,8 @@ class Solution {
         }
         if(i == j)
             return 1;
-        if(i > j){
+        if(i > j)
             return 0;
-        }
 
         if(s.charAt(i) == s.charAt(j)){
             memo[i][j] += 2 + dfs(s,i + 1, j - 1,memo) ;// move anti-diagonaly
