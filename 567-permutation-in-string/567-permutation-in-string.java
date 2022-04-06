@@ -8,9 +8,10 @@ class Solution {
         int count = map.size();
         int j = 0;
         for(int i = 0 ; i < s2.length();i++){
-            if(map.get(s2.charAt(i)) != null){
-                map.put(s2.charAt(i), map.get(s2.charAt(i)) - 1);
-                if(map.get(s2.charAt(i)) == 0){
+            char curr = s2.charAt(i);
+            if(map.get(curr) != null){
+                map.put(curr, map.get(curr) - 1);
+                if(map.get(curr) == 0){
                     count--;
                 }
             }
