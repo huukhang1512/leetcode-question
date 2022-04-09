@@ -13,7 +13,7 @@ class Solution {
         if(memo[start] != null){
             return memo[start];
         }
-        for(int i = start+1; i <= s.length(); i++){
+        for(int i = start + 1; i <= s.length(); i++){
             if(dict.contains(s.substring(start, i)) && dfs(s, i, dict,memo)){
                 memo[start] = true;
                 return true;
