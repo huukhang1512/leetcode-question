@@ -14,8 +14,7 @@ class Solution {
             return memo[start];
         }
         for(int i = start+1; i <= s.length(); i++){
-            String sub = s.substring(start, i);
-            if(dict.contains(sub) && dfs(s, i, dict,memo)){
+            if(dict.contains(s.substring(start, i)) && dfs(s, i, dict,memo)){
                 memo[start] = true;
                 return true;
             }
