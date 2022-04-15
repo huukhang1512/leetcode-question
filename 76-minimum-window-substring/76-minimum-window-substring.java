@@ -37,7 +37,6 @@ class Solution {
             r++;
             
         }
-        if(resLen ==  Integer.MAX_VALUE) return "";
-        return res;
+        return resLen ==  Integer.MAX_VALUE ? "" : res;
     }
 }
