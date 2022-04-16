@@ -15,12 +15,22 @@
  */
 class Solution {
     public List<Integer> rightSideView(TreeNode root) {
-        return bfs(root);
-        // List<Integer> res = new ArrayList<>();
-        // helper();
-        // return res;
+        // return bfs(root);
+        List<Integer> res = new ArrayList<>();
+        dfs(root, res, 0);
+        return res;
     }
     
+    private void dfs(TreeNode root, List<Integer>res, int depth){
+        if(root == null) {
+            return;
+        }
+        depth++;
+        if(depth > res.size()) res.add(root.val);
+        dfs(root.right,res,depth);
+        dfs(root.left,res,depth);
+        depth--;
+    }
     private List<Integer> bfs (TreeNode root){
         List<Integer> res = new ArrayList<>();
         if(root == null) return res;
