@@ -15,8 +15,8 @@ class Solution {
         // p and q in different branch
         if(left != null && right != null) return root;
         // p and q in same branch
-        if(left != null && (root == q || root == p)) return root;
-        if(right != null && (root == q || root == p)) return root;
+        if(left != null && (root == q || root == p)) return left;
+        if(right != null && (root == q || root == p)) return right;
         
         return left == null ? right : left;
     }
