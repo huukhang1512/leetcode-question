@@ -9,32 +9,13 @@
  */
 class Solution {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        Queue<TreeNode> queue = new LinkedList<>();
-        HashMap<TreeNode, TreeNode> map = new HashMap<>();
+        if(root == null || root == q || root == p) return root;
+        TreeNode left = lowestCommonAncestor(root.left, p, q);
+        TreeNode right = lowestCommonAncestor(root.right, p, q);
         
-        map.put(root,null);
-        queue.add(root);
-        
-        while(!map.containsKey(p) || !map.containsKey(q)){
-            TreeNode cur = queue.poll();
-            if(cur.left != null){
-                queue.add(cur.left);
-                map.put(cur.left,cur);
-            }
-            if(cur.right != null){
-                queue.add(cur.right);
-                map.put(cur.right,cur);
-            }
-        }
-        Set<TreeNode> ancestors = new HashSet<>();
-        while(p != null){
-            ancestors.add(p);
-            p = map.get(p);
-        }
-        
-        while(!ancestors.contains(q)){
-            q = map.get(q);
-        }
-        return q;
+        if(left != null && right != null) return root;
+        if(left != null && (root == q || root == p)) return root;
+        if(right != null && (root == q || root == p)) return root;
+        return left == null ? right : left;
     }
 }
