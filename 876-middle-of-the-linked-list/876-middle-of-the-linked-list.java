@@ -13,11 +13,20 @@ class Solution {
         if(head.next == null || head == null){
             return head;
         }
-        ArrayList<ListNode> arr = new ArrayList<>();
-        while(head != null){
-            arr.add(head);
-            head = head.next;
+        // ArrayList<ListNode> arr = new ArrayList<>();
+        // while(head != null){
+        //     arr.add(head);
+        //     head = head.next;
+        // }
+        // return arr.get(arr.size() / 2);
+        
+        
+        ListNode slow = head;
+        ListNode fast = head;
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
         }
-        return arr.get(arr.size() / 2);
+        return slow;
     }
 }
