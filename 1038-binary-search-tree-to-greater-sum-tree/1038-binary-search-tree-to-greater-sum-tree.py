@@ -5,14 +5,13 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    def __init__(self):
-        self.prev_sum = 0
     def bstToGst(self, root):
         """
         :type root: TreeNode
         :rtype: TreeNode
         """
-        node = root
+        self.prev_sum = 0
+        
         def update_node(node):
             if node:
                 update_node(node.right)
