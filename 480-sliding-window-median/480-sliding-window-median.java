@@ -5,7 +5,6 @@ class Solution {
             if(i + k - 1 >= nums.length){
                 break;
             }
-            // int[] cloneArr = nums.clone();
             int[] windowRange = Arrays.copyOfRange(nums,i, k + i);
             Arrays.sort(windowRange);
             if(k % 2 == 0){ // k is even
