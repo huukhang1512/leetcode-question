@@ -3,7 +3,7 @@
 
 public class Solution extends VersionControl {
     public int firstBadVersion(int n) {
-        int l = 1;
+        int l = 0;
         int r = n;
         while(l < r){
             int mid = l+(r-l)/2;
