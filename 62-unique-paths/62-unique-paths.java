@@ -10,6 +10,6 @@ class Solution {
         int numOfWaysRight = uniquePaths(m, n-1);
         int total = numOfWaysDown + numOfWaysRight;
         map.put(cell,total);
-        return total;
+        return total; 
     }
 }
